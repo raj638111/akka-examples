@@ -1,4 +1,4 @@
-package a20_Functional_Style.a10_Hello_World
+package a10_akka.a10_Hello_World
 
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorRef, Behavior}
@@ -15,3 +15,15 @@ object HelloWorld {
   }
 
 }
+
+/**
+
+Scribbling
+def test[T](): Unit = {
+  Class[T] match {
+  case Int.getClass => println("This is int")
+  case Float.getClass => println("This is float")
+}
+}
+
+*/
