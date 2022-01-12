@@ -1,4 +1,4 @@
-package a10_akka.a10_Hello_World
+package a10_akka_core.a10_Hello_World
 
 import akka.actor.typed.ActorSystem
 import org.scalatest.funsuite.AnyFunSuite
