@@ -6,8 +6,8 @@ val akkaVersion = "2.6.12"
 libraryDependencies ++= Seq(
 	"com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
 	"com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
-  "com.typesafe.akka" %% "akka-persistence-typed" % akkaVersion,
-  "com.typesafe.akka" %% "akka-persistence-testkit" % akkaVersion % Test,
+  "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+  "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test,
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "org.scalatest" %% "scalatest" % "3.1.0" % Test,
   "org.apache.commons" % "commons-lang3" % "3.11",
