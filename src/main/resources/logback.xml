@@ -5,14 +5,9 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
-        <filter class="org.apache.spark">
-            <level>WARN</level>
-        </filter>
 
         <encoder>
-            <!--%d{yy/MM/dd HH:mm:ss} | %p | %c | %M() | %L | %m%n -->
-            <!-- <pattern>[%date{ISO8601}] [%level] [%logger] [%marker] [%thread] - %msg MDC: {%mdc}%n</pattern> -->
-            <pattern>%level | %date{ISO8601} | %logger | %marker | %thread | %class | %M | %L | %mdc | %msg %n</pattern>
+            <pattern>%level | %class | %L | %msg %n</pattern>
         </encoder>
     </appender>
 
