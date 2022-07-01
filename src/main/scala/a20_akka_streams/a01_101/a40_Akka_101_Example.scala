@@ -10,14 +10,14 @@ import java.nio.file.Paths
 import scala.concurrent.{ExecutionContextExecutor, Future}
 import scala.util.Try
 
-object a40_FirstPrinciples {
+object a40_Akka_101_Example {
 
   def main(args: Array[String]): Unit = {
 
     implicit val system = ActorSystem("FirstPrinciples")
 
-    // Materializer
-    //TODO:
+    // -- Materializer ------------------------------------------------------------------------
+    // Allocate resources (Actors, Thread pools etc...) to run Akka stream
     implicit val materializer: ActorMaterializer = ActorMaterializer()
 
     // -- Source ------------------------------------------------------------------------

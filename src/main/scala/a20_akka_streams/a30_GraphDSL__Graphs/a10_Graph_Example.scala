@@ -1,4 +1,4 @@
-package a20_akka_streams.a30_Graphs_n_GraphDSL
+package a20_akka_streams.a30_GraphDSL__Graphs
 
 import akka.actor.ActorSystem
 import akka.stream.{ActorMaterializer, ClosedShape, FanInShape2, UniformFanInShape, UniformFanOutShape}

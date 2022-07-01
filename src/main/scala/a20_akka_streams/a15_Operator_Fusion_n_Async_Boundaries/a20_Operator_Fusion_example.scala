@@ -1,4 +1,4 @@
-package a20_akka_streams.a15_Operator_Fusion
+package a20_akka_streams.a15_Operator_Fusion_n_Async_Boundaries
 
 import akka.NotUsed
 import akka.actor.{Actor, ActorSystem, Props}

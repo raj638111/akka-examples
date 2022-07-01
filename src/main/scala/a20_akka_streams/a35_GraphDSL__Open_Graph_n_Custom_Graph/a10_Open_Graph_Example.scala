@@ -1,4 +1,4 @@
-package a20_akka_streams.a35_Open_Graph
+package a20_akka_streams.a35_GraphDSL__Open_Graph_n_Custom_Graph
 
 import akka.{Done, NotUsed}
 import akka.actor.ActorSystem

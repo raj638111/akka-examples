@@ -1,9 +1,12 @@
-package a20_akka_streams.GraphDSL__Graph_Cycles
+package a20_akka_streams.a60_GraphDSL__Graph_Cycles
 
 import akka.actor.ActorSystem
 import akka.stream.scaladsl.{Broadcast, Flow, GraphDSL, Merge, MergePreferred, RunnableGraph, Sink, Source, Zip, ZipWith}
 import akka.stream.{ActorMaterializer, ClosedShape, OverflowStrategy, UniformFanInShape}
 
+/**
+ * Cycles are basically feedback loops which can be built with GraphDSL
+ */
 object a10_Graph_Cycle_Example extends App {
 
   implicit val system = ActorSystem("GraphCycles")

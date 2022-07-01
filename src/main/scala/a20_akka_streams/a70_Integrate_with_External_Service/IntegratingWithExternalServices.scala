@@ -1,4 +1,4 @@
-package a20_akka_streams.a70_Integration_with_External_Service
+package a20_akka_streams.a70_Integrate_with_External_Service
 
 import akka.{Done, NotUsed}
 
