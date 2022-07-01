@@ -16,13 +16,13 @@ object a40_FirstPrinciples {
 
     implicit val system = ActorSystem("FirstPrinciples")
 
-    // Materializer:
+    // Materializer
     //TODO:
-    implicit val materializer = ActorMaterializer()
+    implicit val materializer: ActorMaterializer = ActorMaterializer()
 
     // -- Source ------------------------------------------------------------------------
     //  1st Type: Type of the element source emits
-    //  2nd Type: Produces auxiliary value when running the source
+    //  2nd Type: Is Materialized value: Produces auxiliary value when running the source
     //    Ex: Network source might provide information about about bound port (or) peer's address
     //    Specify 'NotUsed' when no auxiliary information is provided
     //  Serializable
@@ -49,7 +49,21 @@ object a40_FirstPrinciples {
 
     //-- Graph ---------------------------------------------
     val graph = source.to(sink)
-    graph.run()
+
+    //-- Materialized value ----------------------------------------------
+    //  - Calling run(),
+    //    . On the graph is called as materializing the graph
+    //    . Materializes all the components (ie source, flow, sink) in the graph
+    //    . Produces a single materialized value (ie **result = NotUsed = graph.run())
+    //      ~ It is up to us to decide which of the materialized value we care about
+    //        (out of all the components materialized)
+    //  - A component can materialize multiple times
+    //    . How? when we use the same component in different graphs (or)
+    //    . How? different runs = different materializations
+    //  - A materialized value can be anything (42, Future, connection, actor, NotUsed, etc...)
+    //  - Running a graph allocates the required resources
+    //    . Example: thread pools, sockets, connections, etc... which are all transparent to us
+    val result: NotUsed = graph.run()
 
     //-- Source With Flow, Sink with Flow, via ---------------------------------------------
     val flow: Flow[Int, Int, NotUsed] = Flow[Int].map(x => x + 1)
